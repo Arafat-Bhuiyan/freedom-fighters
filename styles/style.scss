@@ -1,0 +1,19 @@
+.scrolling-text {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.scrolling-text p {
+    display: inline-block;
+    animation: marquee 45s linear infinite;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}

@@ -8,6 +8,14 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -16,12 +24,30 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
+/* Your existing CSS */
+
+body.light {
+  /* Light theme background color */
+  color: rgb(0, 0, 0);
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    to bottom,
+    transparent,
+    rgb(var(--dark-background-end-rgb))
+  ) rgb(var(--dark-background-start-rgb));
+}
+
+
+body.dark {
+  /* Dark theme background color */
+  color: rgb(255, 255, 255);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgb(var(--background-end-rgb))
+  ) rgb(var(--background-start-rgb));
+}
+
+.container {
+  width: 80%;
+  margin-left: 10%;
 }
